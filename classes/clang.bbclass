@@ -27,7 +27,6 @@ TARGET_CXXFLAGS_append_toolchain-clang = " ${LIBCPLUSPLUS}"
 TUNE_CCARGS_append_toolchain-clang = " ${COMPILER_RT} ${LIBCPLUSPLUS}"
 
 TUNE_CCARGS_remove_toolchain-clang = "-meb"
-TUNE_CCARGS_remove_toolchain-clang = "-mel"
 TUNE_CCARGS_append_toolchain-clang = "${@bb.utils.contains("TUNE_FEATURES", "bigendian", " -mbig-endian", " -mlittle-endian", d)}"
 
 # Clang does not yet support big.LITTLE performance tunes, so use the LITTLE for tunes
